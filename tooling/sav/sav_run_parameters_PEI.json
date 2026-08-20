@@ -1,0 +1,13 @@
+{
+  "rangestart": "2023-06-01",
+  "rangeend": "2023-07-31",
+  "spatial_extent": {
+    "west": -64.03913,
+    "south": 46.74577,
+    "east": -64.00239,
+    "north": 46.7966,
+    "crs": "EPSG:4326"
+  },
+  "maxcloudcover": 40,
+  "area_name": "PEI"
+}

@@ -1,0 +1,13 @@
+{
+  "rangestart": "2023-01-01",
+  "rangeend": "2023-01-23",
+  "spatial_extent": {
+    "west": 118.54074,
+    "south": 4.31173,
+    "east": 118.58351,
+    "north": 4.34025,
+    "crs": "EPSG:4326"
+  },
+  "maxcloudcover": 40,
+  "area_name": "Malaysia"
+}
