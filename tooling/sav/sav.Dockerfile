@@ -1,4 +1,11 @@
 ARG BASE_IMAGE=ghcr.io/people-ecco/ecco-algorithm-base:1.1.1
+
+FROM alpine:3.20 AS fetcher
+RUN apk add --no-cache curl
+WORKDIR /out
+COPY tooling/sav/model_downloader.sh .
+RUN sh model_downloader.sh && rm model_downloader.sh
+
 FROM ${BASE_IMAGE}
 
 # Algorithm base path
@@ -27,6 +34,5 @@ COPY tooling/sav/requirements.txt requirements.txt
 RUN uv pip install --system -r requirements.txt
 
 # Copy sourcecode. Copy models separately to allow for Docker caching
-COPY src/models/ sav/models/
 COPY --exclude=src/models/*.pkl src/ sav/
-
+COPY --from=fetcher out/*.pkl sav/models/
