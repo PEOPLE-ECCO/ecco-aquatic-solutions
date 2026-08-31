@@ -1,3 +1,4 @@
+# syntax=docker/dockerfile:1.7-labs
 ARG BASE_IMAGE=ghcr.io/people-ecco/ecco-algorithm-base:1.1.1
 
 FROM alpine:3.20 AS fetcher
